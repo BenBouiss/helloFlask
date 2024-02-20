@@ -27,4 +27,5 @@ Install and run app
 
 Build and install lib
 - $ poetry build
+
 Creates a "dist" folder with an archive .gz and a .whl file. pip install said file to install the lib to virt env.
