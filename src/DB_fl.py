@@ -18,7 +18,7 @@ CREATE TABLE Visiteur (
     conn = sqlite3.connect(path)
     c = conn.cursor()
     c.executescript(query)
-    Execute_query("INSERT INTO Visiteur (Count) VALUES (1);", path)
+    Execute_query("INSERT INTO Visiteur (Count) VALUES (0);", path)
 
 def Execute_query(query, path):
     con = sqlite3.connect(path)
@@ -67,6 +67,6 @@ if __name__ == "__main__":
     Exist = True
     if not Exist:
         recreate_database(path)
-    app.run(debug=False)
+    app.run(debug=True)
     
     
