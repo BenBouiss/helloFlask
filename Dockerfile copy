@@ -1,0 +1,17 @@
+FROM python:3.8.6
+LABEL Maintainer="Ben"
+
+
+#WORKDIR /home/benjamin.bouissou@Digital-Grenoble.local/Documents/Repos/helloFlask/src
+WORKDIR /python-docker
+ADD ./src/app.py .
+
+COPY . .
+
+RUN pip install poetry
+
+RUN poetry install 
+
+EXPOSE 8000
+#CMD ["python", "./app.py"]
+ENTRYPOINT ["poetry", "run", "python", "-m", "src.app"]
