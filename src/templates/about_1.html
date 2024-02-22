@@ -1,12 +1,40 @@
+<!DOCTYPE html>
 <html>
-    <body>
-        <h1>Hello about</h1>
+    <head>
+        
+        <style>
+        body {
+          background-image: url("static/cat.jpg");
+          background-repeat: no-repeat;
+          background-position: right top;
+          margin-right: 200px;
+          background-size: 64px 64px;
+        }
+        </style>
+        </head>
+    <head>
+        <title>Flask app</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        </head>
+    <header>
+        <div class="container">
+            <h1 class="logo">Ben's web app</h1>
+            <strong><nav>
+              <ul class="menu">
+                <li><a href="{{ url_for('main_page') }}">Main</a></li>
+                <li><a href="{{ url_for('count') }}">Count</a></li>
+                <li><a href="{{ url_for('form') }}">Form</a></li>
+                <li><a href="{{ url_for('home_fn') }}">Home</a></li>
+                </ul>
+            </nav></strong>
+        </div>
+    </header>
+    <h1>Hello about</h1>
         <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur magni porro sequi placeat esse, fuga non error odio aliquid impedit odit quasi numquam illo! Quisquam, itaque voluptas! Sit, quaerat vitae.
+            In the land of bubbling marshmallows and flying umbrellas, where rivers flow uphill and trees grow upside down, there lived a colony of purple polka-dotted elephants who communicated through interpretive dance and poetry recitals performed in reverse. Their leader, a wise old jellyfish with a penchant for wearing top hats made of cheese, ruled over them with an iron spatula and a feather duster. Every Tuesday, they would gather around a giant rubber duck to discuss the latest gossip from the neighboring galaxy inhabited by sentient marshmallows and talking broccoli. Meanwhile, in the parallel dimension of shimmering sparkles and perpetual hiccups, a troupe of acrobatic penguins rehearsed for their upcoming performance of synchronized swimming in a pool filled with rainbow-colored tapioca pudding. Occasionally, they would pause to debate the merits of wearing snorkels made of spaghetti versus noodles made of rubber bands. Amidst the chaos of cosmic accordion concerts and spontaneous salsa dancing contests between octopi and unicorns, one could find solace in the soothing melodies of a harmonica-playing giraffe serenading the moon with lullabies composed of twinkling stars and cosmic dust. And so, the nonsensical symphony of the universe played on, weaving together the absurd and the illogical into a tapestry of whimsy and wonder.    
         </p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, assumenda incidunt. Eligendi eum asperiores, minus veniam distinctio accusantium inventore, quas praesentium numquam, ullam natus quaerat similique velit commodi. Quas, quasi?
-        <p>
+            <p>
         <img src="static/cat_linux.png" alt = "Ben" class="center" height = "600" width = "400">
         </p>
-    </body>
+    
 </html>

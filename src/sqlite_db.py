@@ -4,7 +4,6 @@ import sqlite3
 import pandas as pd
 
 path = "visits.db"
-app = flask.Flask(__name__)
 
 
 def recreate_database(path):
@@ -18,7 +17,7 @@ CREATE TABLE Visiteur (
     conn = sqlite3.connect(path)
     c = conn.cursor()
     c.executescript(query)
-    Execute_query("INSERT INTO Visiteur (Count) VALUES (0);", path)
+    Execute_query("INSERT INTO Visiteur (Count) VALUES (1);", path)
 
 def Execute_query(query, path):
     con = sqlite3.connect(path)
@@ -39,34 +38,9 @@ def Get_count(path):
     con.close()
     return df.loc[0].values[0]
 
-@app.route("/")
-def home():
-    Name = "Ben"
-    return flask.render_template("index_1.html", title = "Jinja and Flask", name = Name, path = "cat.jpg")
-
-@app.route("/home")
-def home_home():
-    Name = "Ben"
-    return flask.render_template("home_1.html", title = "Jinja and Flask")
-
-@app.route("/about")
-def home_about():
-    return flask.render_template("about_1.html", title = "Jinja and Flask")
-
-@app.route("/form")
-def home_form():
-    return flask.render_template("form_1.html", title = "Jinja and Flask")
-
-@app.route("/count")
-def home_count():
-    Add_one(path)
-    Count = Get_count(path)
-    return flask.render_template("count_1.html", title = "Jinja and Flask", count = Count) 
-
 if __name__ == "__main__":
     Exist = True
     if not Exist:
         recreate_database(path)
-    app.run(debug=True)
     
     
