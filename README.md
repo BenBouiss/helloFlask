@@ -57,7 +57,7 @@ sudo docker run -p 8000:5000 app_flask
 
 Builds the docker using the Dockerfile present then runs it forwarding the 5000 port used by default by Flask to the 8000 port.
 
-Remove dangling(<none>) images
+Remove dangling(< none >) images
 ```bash
 sudo docker rmi $(docker images -f "dangling=true" -q)
 ```
