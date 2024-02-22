@@ -1,7 +1,18 @@
 <html>
     <body>
-        <h1>Hello {{name}}</h1>
-        <img src="static/assets/orange-cat-stare.gif" alt = "Ben" class="center" height = "800" width = "1800">
+        <div class="container">
+            <h1 class="logo">Ben's web app</h1>
+            <strong><nav>
+              <ul class="menu">
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('form') }}">Form</a></li>
+                <li><a href="{{ url_for('home_fn') }}">Home</a></li>
+              </ul>
+            </nav></strong>
+          </div>
 
+        <h1>Hello {{name}}</h1>
+         <img src="static/assets/orange-cat-stare.gif" alt = "Ben" class="center" height = "800" width = "1800">
+        
     </body>
 </html>
