@@ -67,3 +67,18 @@ Stop and delete all active containers
 docker stop $(docker ps -a -q)
 docker rm $ (docker ps -a -q) 
 ```
+
+# Utilisation de postgres
+
+
+
+
+Launch postgres docker image at the port 5455 redirecting to 5432
+```bash
+docker run --name myPostgresDb -p 5455:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=BenBouiss -e POSTGRES_DB=visiteur_count -d postgres
+```
+Use with DBeaver instanciate server using localhost:5455 and tick show all database
+
+
+
+
