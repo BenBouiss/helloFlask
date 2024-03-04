@@ -15,7 +15,10 @@ RUN pip3 install -r requirements.txt
 
 COPY . /app
 EXPOSE 8000
- 
+EXPOSE 5455
+EXPOSE 5432
+
+
 ENTRYPOINT [ "python" ]
 
 CMD [ "src/app.py" ]

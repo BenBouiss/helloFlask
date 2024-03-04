@@ -1,4 +1,5 @@
 #import jinja2
+# https://medium.com/@kesaralive/diving-deeper-into-docker-networking-with-docker-compose-737e3b8a3c8c
 import flask
 from flask import url_for
 import sqlite_db
@@ -46,6 +47,8 @@ def count():
 if __name__ == "__main__":
     #sqlite_db.recreate_database(db_path)
     con = connect.get_conn()
-    connect.recreate_database(con)
+    exist = True
+    if not exit:
+        connect.recreate_database(con)
     con.close()
     app.run(debug=False, host='0.0.0.0')
